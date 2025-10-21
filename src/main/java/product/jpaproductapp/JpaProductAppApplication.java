@@ -34,6 +34,19 @@ public class JpaProductAppApplication implements CommandLineRunner {
         System.out.println(product.getQuantity());
         System.out.println("************");
 
+        List<Product> productsList1 = productRepository.findByNameContains("t");
+        productsList1.forEach(p->{
+            System.out.println(p);
+        });
+
+        System.out.println("************");
+
+        List<Product> productsList2 = productRepository.search("%c%");
+        productsList2.forEach(p->{
+            System.out.println(p);
+        });
+
+
 
     }
 
