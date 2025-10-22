@@ -46,6 +46,20 @@ public class JpaProductAppApplication implements CommandLineRunner {
             System.out.println(p);
         });
 
+        System.out.println("************");
+
+        List<Product> productsList3 = productRepository.findByPriceGreaterThan(3000);
+        productsList3.forEach(p->{
+            System.out.println(p);
+        });
+
+        System.out.println("************");
+
+        List<Product> productsList4 = productRepository.searchByPrice(4000);
+        productsList4.forEach(p->{
+            System.out.println(p);
+        });
+
 
 
     }
